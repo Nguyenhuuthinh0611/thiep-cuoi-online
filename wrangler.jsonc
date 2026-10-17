@@ -1,7 +1,7 @@
 // Cấu hình deploy lên Cloudflare (Workers – static assets)
 // "name" phải trùng với tên Worker/Project bạn đặt trên dashboard Cloudflare
 {
-  "name": "thiep-cuoi",
+  "name": "hoanglong-thuyvan",
   "compatibility_date": "2026-10-01",
   "assets": {
     "directory": "./"
