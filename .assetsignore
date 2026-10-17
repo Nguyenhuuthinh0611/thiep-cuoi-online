@@ -1,0 +1,12 @@
+# Những file/thư mục KHÔNG đưa lên web
+.git
+.vscode
+.DS_Store
+node_modules
+_backup-truoc-ren-theu
+images/album ảnh cưới
+google-apps-script
+README.md
+wrangler.jsonc
+.assetsignore
+.gitignore
