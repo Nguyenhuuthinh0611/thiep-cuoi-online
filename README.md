@@ -79,5 +79,5 @@ Danh sách khách xác nhận sẽ hiện trong tab **RSVP** của Sheet. Số �
 
 ## Lưu ý
 
-- Ảnh `og-image.jpg`: sau khi có link thật, sửa thẻ `og:image` trong `index.html` thành URL đầy đủ (vd `https://thiep-cuoi.pages.dev/images/og-image.jpg`) để Zalo/Facebook hiện ảnh xem trước.
+- Ảnh `og-image.jpg`: sau khi có link thật, sửa thẻ `og:image` trong `index.html` thành URL đầy đủ (hiện đang là `https://hoanglong-thuyvan.pages.dev/images/og-image.jpg`; nếu đổi tên miền thì sửa lại) để Zalo/Facebook hiện ảnh xem trước.
 - Số tài khoản ngân hàng sẽ công khai với ai có link — chỉ gửi link cho người quen.

@@ -97,5 +97,5 @@ window.WEDDING = {
 
   // Lưu RSVP + lời chúc vào Google Sheets (xem README, mục "Kết nối Google Sheets").
   // Để "" thì form vẫn chạy nhưng lời chúc chỉ lưu trên máy người gửi.
-  sheetApi: "",
+  sheetApi: "https://script.google.com/macros/s/AKfycbz1frUvc15KV6fSTncYiqvCzRDDzDoXZDdiqohVlZFDgTdSUf4I9aNtGlwhhMAdUW5N/exec",
 };
