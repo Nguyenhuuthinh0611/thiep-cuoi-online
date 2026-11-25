@@ -66,6 +66,11 @@ window.WEDDING = {
     "images/album/23.jpg",
     "images/album/24.jpg",
     "images/album/25.jpg",
+    // Ảnh ngày lễ
+    "images/album/26.jpg",
+    "images/album/27.jpg",
+    "images/album/28.jpg",
+    "images/album/29.jpg",
   ],
 
   // Chuyện tình yêu (để [] thì không hiện)

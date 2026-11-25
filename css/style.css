@@ -99,10 +99,8 @@ figure { margin: 0; }
 .hero-date { font-family: var(--serif); font-size: 1.2rem; letter-spacing: .06em; margin-top: .6rem; }
 
 /* ---------- Ảnh ngang có chữ ---------- */
-.band { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
-.band img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
-.band::after { content: ""; position: absolute; inset: 45% 0 0; background: linear-gradient(0deg, rgba(255,255,255,.92), rgba(255,255,255,0)); }
-.band-text { position: absolute; z-index: 1; left: 0; right: 0; bottom: 1.1rem; text-align: center; padding: 0 1.6rem; }
+.band img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 40%; }
+.band-text { text-align: center; padding: 1.2rem 1.6rem 0; }
 .band-line { font-family: var(--serif); font-size: 1.15rem; }
 .band-sub { font-size: .9rem; color: var(--muted); margin-top: .4rem; line-height: 1.5; }
 
@@ -147,7 +145,7 @@ figure { margin: 0; }
 .dearest .strip3 { padding: .4rem 1.6rem .5rem; }
 .dearest-photo { margin: 0 1.6rem; }
 .dearest-photo img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
-.dearest-script { font-size: 2.88rem; text-align: right; padding-right: 1.4rem; margin-top: -2.2rem; position: relative; }
+.dearest-script { font-size: 2.88rem; text-align: right; padding-right: 1.4rem; margin-top: .9rem; position: relative; }
 .dearest-script span { display: inline-block; margin-top: .4rem; }
 .poem { text-align: center; color: var(--muted); font-size: 1rem; line-height: 1.8; padding: 2rem 1.6rem 0; }
 .poem.left { text-align: left; }
