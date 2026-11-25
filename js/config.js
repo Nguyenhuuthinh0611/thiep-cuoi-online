@@ -8,29 +8,29 @@ window.WEDDING = {
     fullName: "Hoàng Long",
     photo: "images/groom.jpg",
     bio: "Một chàng trai hiền lành, thích công nghệ và luôn tin rằng điều tuyệt vời nhất đời mình là gặp được em.",
-    father: "Ông Nguyễn Văn A",
-    mother: "Bà Trần Thị B",
+    father: "Ông Hoàng Bình",
+    mother: "Bà Nguyễn Giáng Hương",
   },
   bride: {
     name: "Thùy Vân",
     fullName: "Thùy Vân",
     photo: "images/bride.jpg",
     bio: "Cô gái nhỏ yêu hoa, yêu những chuyến đi và đã nói “đồng ý” với người con trai ấy.",
-    father: "Ông Lê Văn C",
-    mother: "Bà Phạm Thị D",
+    father: "Ông Nguyễn Châu Hiệp",
+    mother: "Bà Võ Thị Tuyết",
   },
 
   // Ngày giờ hôn lễ (giờ Việt Nam). Định dạng: YYYY-MM-DDTHH:mm:ss+07:00
-  date: "2026-04-04T17:30:00+07:00",
+  date: "2026-12-05T18:00:00+07:00",
   lunarDate: "", // ví dụ: "Tức ngày 17 tháng 02 năm Bính Ngọ" (để trống nếu không dùng)
 
   venue: {
-    name: "Tư gia nhà trai",
-    address: "42 Đường 9, Tập Thể F361 An Dương, Tây Hồ, Hà Nội",
+    name: "Thảo Viên - Botanic Garden",
+    address: "Số 2, Ngõ 31 Hoàng Cầu, Hà Nội",
     // Link Google Maps (mở khi bấm "Chỉ đường")
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=42+%C4%90%C6%B0%E1%BB%9Dng+9+T%E1%BA%ADp+Th%E1%BB%83+F361+An+D%C6%B0%C6%A1ng+T%C3%A2y+H%E1%BB%93+H%C3%A0+N%E1%BB%99i",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Th%E1%BA%A3o+Vi%C3%AAn+Botanic+Garden%2C+S%E1%BB%91+2+Ng%C3%B5+31+Ho%C3%A0ng+C%E1%BA%A7u%2C+H%C3%A0+N%E1%BB%99i",
     // Link nhúng bản đồ (Google Maps → Chia sẻ → Nhúng bản đồ → copy phần src). Để "" nếu không muốn hiện bản đồ
-    mapEmbed: "https://www.google.com/maps?q=42+%C4%90%C6%B0%E1%BB%9Dng+9+T%E1%BA%ADp+Th%E1%BB%83+F361+An+D%C6%B0%C6%A1ng+T%C3%A2y+H%E1%BB%93+H%C3%A0+N%E1%BB%99i&output=embed",
+    mapEmbed: "https://www.google.com/maps?q=Th%E1%BA%A3o+Vi%C3%AAn+Botanic+Garden%2C+S%E1%BB%91+2+Ng%C3%B5+31+Ho%C3%A0ng+C%E1%BA%A7u%2C+H%C3%A0+N%E1%BB%99i&output=embed",
   },
 
   invitation: "Bạn và người thương đến dự buổi tiệc chung vui cùng gia đình chúng tôi",
@@ -68,17 +68,12 @@ window.WEDDING = {
     "images/album/25.jpg",
   ],
 
-  // Chuyện tình yêu (có thể xoá bớt)
-  story: [
-    { date: "2019", title: "Lần đầu gặp gỡ", text: "Một buổi chiều Hà Nội, hai đứa vô tình ngồi cùng bàn trong quán cà phê quen." },
-    { date: "2021", title: "Chính thức hẹn hò", text: "Sau rất nhiều tin nhắn “ngủ ngon”, anh đã lấy hết can đảm để ngỏ lời." },
-    { date: "2025", title: "Lời cầu hôn", text: "Chiếc nhẫn nhỏ và một câu hỏi lớn — em đã gật đầu." },
-  ],
+  // Chuyện tình yêu (để [] thì không hiện)
+  story: [],
 
   timeline: [
-    { time: "16:30", label: "Đón khách" },
-    { time: "17:30", label: "Lễ Thành Hôn" },
-    { time: "18:00", label: "Khai tiệc" },
+    { time: "17:30", label: "Đón khách" },
+    { time: "18:00", label: "Khai tiệc báo hỷ" },
     { time: "19:00", label: "Giao lưu & Tiệc mừng" },
   ],
 
@@ -89,8 +84,7 @@ window.WEDDING = {
 
   // Hộp mừng cưới — ảnh QR đặt trong images/qr-*.png
   gifts: [
-    { owner: "Chú rể", bank: "Vietcombank", account: "0123456789", holder: "HOANG LONG", qr: "images/qr-groom.png" },
-    { owner: "Cô dâu", bank: "Techcombank", account: "9876543210", holder: "THUY VAN", qr: "images/qr-bride.png" },
+    { owner: "Chú rể", bank: "Techcombank", account: "2206 9488 889", holder: "HOANG LONG", qr: "images/qr-hoanglong.png" },
   ],
 
   music: "music/song.mp3", // nhạc nền (để "" nếu không dùng)

@@ -20,7 +20,16 @@
   const vn = (opt) => new Intl.DateTimeFormat("vi-VN", { timeZone: "Asia/Ho_Chi_Minh", ...opt }).format(wedding);
   const dd = vn({ day: "2-digit" }), mm = vn({ month: "2-digit" }), yyyy = vn({ year: "numeric" });
   const hhmm = vn({ hour: "2-digit", minute: "2-digit", hour12: false });
-  $("#heroDate").textContent = `${dd} . ${mm} . ${yyyy}`;
+  const setText = (sel, v) => { const el = $(sel); if (el) el.textContent = v; };
+  const weekday = vn({ weekday: "long" });
+  $("#heroDate").textContent = `${yyyy}.${mm}.${dd}`;
+  setText("#envDate", `${dd} . ${mm} . ${yyyy}`);
+  setText("#stripYear", yyyy);
+  setText("#collageDate", `${dd}.${mm}`);
+  setText("#calNo", `No.${mm}`);
+  setText("#calMD", `${dd}.${mm}`);
+  setText("#calLine1", `${weekday.charAt(0).toUpperCase() + weekday.slice(1)}, ${dd}.${mm}.${yyyy}`);
+  setText("#calLine2", W.lunarDate ? `${W.lunarDate} | ${hhmm}` : `Vào lúc ${hhmm}`);
   $("#dbWeekday").textContent = vn({ weekday: "long" });
   $("#dbTime").textContent = `Vào lúc ${hhmm}`;
   $("#dbDay").textContent = dd;
@@ -60,13 +69,10 @@
     $("#calendar").innerHTML = h + "</div>";
   })();
 
-  /* ---------- Chuyện tình, timeline, dresscode ---------- */
+  /* ---------- Chuyện tình ---------- */
   $("#story").innerHTML = (W.story || []).map((s) =>
     `<div class="story-item reveal"><b>${esc(s.date)}</b><h4>${esc(s.title)}</h4><p>${esc(s.text)}</p></div>`).join("");
   if (!W.story || !W.story.length) $("#story").remove();
-  $("#timeline").innerHTML = W.timeline.map((t) =>
-    `<li class="reveal"><span class="t">${esc(t.time)}</span><span class="l">${esc(t.label)}</span></li>`).join("");
-  $("#swatches").innerHTML = W.dresscode.colors.map((c) => `<span style="background:${esc(c)}" title="${esc(c)}"></span>`).join("");
 
   /* ---------- Album: slide 3D + lightbox ---------- */
   const N = W.album.length;
@@ -111,16 +117,20 @@
   lb.addEventListener("touchend", (e) => { const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1)); });
 
   /* ---------- Mừng cưới ---------- */
-  $("#gifts").innerHTML = W.gifts.map((g) => `
+  const giftHtml = W.gifts.map((g) => `
     <div class="gift">
       <p class="caps">${esc(g.owner)}</p>
       ${g.qr ? `<img src="${esc(g.qr)}" alt="QR ${esc(g.owner)}" />` : ""}
       <p>${esc(g.bank)}</p>
       <p class="acc">${esc(g.account)}</p>
       <p class="small">${esc(g.holder)}</p>
-      <button class="btn btn-dark" data-copy="${esc(g.account)}">Sao chép số tài khoản</button>
+      <button class="btn btn-dark" data-copy="${esc(g.account.replace(/\s/g, ""))}">Sao chép số tài khoản</button>
     </div>`).join("");
-  $("#giftBtn").onclick = () => ($("#giftModal").hidden = false);
+  $("#giftBtn").onclick = (e) => {
+    const box = e.currentTarget; box.classList.add("opening");
+    setTimeout(() => { $("#giftModal").hidden = false; box.classList.remove("opening"); }, 550);
+  };
+  $("#gifts").innerHTML = giftHtml;
   $("#gifts").addEventListener("click", async (e) => {
     const b = e.target.closest("[data-copy]"); if (!b) return;
     try { await navigator.clipboard.writeText(b.dataset.copy); b.textContent = "Đã sao chép ✓"; }
