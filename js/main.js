@@ -169,11 +169,25 @@
                   add(w) { try { localStorage.setItem(LS, JSON.stringify([w, ...this.get()].slice(0, 50))); } catch {} } };
   let wishList = [];
   const wishHtml = (w) => `<div class="wish"><b>${esc(w.name)}</b><p>${esc(w.message)}</p></div>`;
+  const WISH_PREVIEW = 3; // số lời chúc hiện sẵn trên trang
+  function showWishes() {
+    const n = wishList.length;
+    $("#wishes").innerHTML = wishList.slice(0, WISH_PREVIEW).map(wishHtml).join("");
+    const more = $("#wishMore");
+    more.hidden = n <= WISH_PREVIEW;
+    more.textContent = `Xem tất cả ${n} lời chúc`;
+  }
   function renderWishes(list) {
     wishList = list.filter((w) => w.message);
-    $("#wishes").innerHTML = wishList.map(wishHtml).join("");
+    showWishes();
     ticker.start();
   }
+  $("#wishMore").onclick = () => {
+    $("#wishModalTitle").textContent = `Sổ lưu bút (${wishList.length})`;
+    $("#wishesAll").innerHTML = wishList.map(wishHtml).join("");
+    $("#wishModal").hidden = false;
+    $("#wishesAll").scrollTop = 0;
+  };
   async function loadWishes() {
     if (!W.sheetApi) return renderWishes(local.get());
     try {
@@ -230,7 +244,7 @@
       f.reset();
       if (data.message) {
         wishList.unshift({ name: data.name, message: data.message });
-        $("#wishes").insertAdjacentHTML("afterbegin", wishHtml(data));
+        showWishes();
         ticker.showNow();
       }
     } catch {
