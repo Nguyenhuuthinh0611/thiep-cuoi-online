@@ -7,6 +7,10 @@
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const pad = (n) => String(n).padStart(2, "0");
 
+  /* ---------- Chặn phóng to màn hình khi lỡ tay chụm/chạm 2 lần ---------- */
+  ["gesturestart", "gesturechange"].forEach((t) => document.addEventListener(t, (e) => e.preventDefault(), { passive: false })); // iPhone
+  document.addEventListener("touchmove", (e) => { if (e.touches.length > 1) e.preventDefault(); }, { passive: false });
+
   /* ---------- Đổ dữ liệu từ config ---------- */
   $$("[data-f]").forEach((el) => {
     const v = get(el.dataset.f);
